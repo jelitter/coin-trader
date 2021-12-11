@@ -1,0 +1,151 @@
+$green: #43a334;
+$red: #ec5e33;
+
+.orders {
+    background-color: #2f343e;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 2px 2px black;
+    box-sizing: border-box;
+    color: #fff;
+    display: grid;
+    grid-template-rows: 5rem 4rem 4rem 300px 1fr 1fr ;
+    height: calc(100vh - 140px);
+    overflow: hidden;
+    text-align: center; 
+    width: 600px;
+    z-index: 1;
+
+    .logo {
+        overflow: hidden;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: rgb(37, 43, 50);
+        border-bottom: #ddd 1px solid;
+
+        .detail {
+            width: 300px;
+
+            table {
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 0.8rem;
+                text-align: left;
+                td {
+                    background-color: #2f343e;
+                    padding: 2px 0.5rem;
+                }
+            }
+        }
+    }
+
+    .header {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        display: grid;
+        gap: 0.5rem;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
+
+        .title {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .coins {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .cash {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    }
+
+    .actions {
+        display: flex;
+        gap: 1rem;
+        padding: 0 1rem;
+        border-bottom: #ddd 1px solid;
+    }
+
+    .sales {
+        background-color: #292d36;
+        border-top: #ddd 1px solid;
+        padding: 1rem;
+        overflow: hidden auto;
+        font-family: 'Lucida Console', Monaco, monospace;
+        color: $red;
+    }
+
+    .purchases {
+        padding: 1rem;
+        overflow: hidden auto;
+        font-family: 'Lucida Console', Monaco, monospace;
+        color: $green;
+        border-top: #ddd 1px solid;
+    }
+
+    .fadeIn {
+        animation: fadeIn 0.75s ease-in;
+    }
+
+    ul {
+        width: 50%;
+        margin: auto;
+
+        li {
+            list-style: none;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+    }
+
+    button {
+        height: 3rem;
+        border: none;
+        padding: 0 1rem;
+        color: whitesmoke;
+        gap: 1rem;
+        width: calc(50% - 0.5rem);
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-shadow: #212328 1px 1px 4px;
+        cursor: pointer;
+        box-shadow: 2px 2px 2px 1px black;
+        transition: filter 0.3s ease-in-out;
+
+        &.buy {
+            background: linear-gradient(to bottom, $green 80%, rgba(0, 0, 0, 0.1));
+        }
+        &.sell {
+            background: linear-gradient(to bottom, $red 80%, rgba(0, 0, 0, 0.1));
+        }
+        &:hover {
+            filter: saturate(2);
+        }
+        &:active {
+            transform: translate3D(1px, 1px, 0);
+            box-shadow: 1px 1px 2px 0px black;
+        }
+        &:disabled {
+            filter: grayscale(100%) contrast(0.75);
+            cursor: not-allowed;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
