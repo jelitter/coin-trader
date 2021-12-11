@@ -1,4 +1,4 @@
-# React Sample Order Book
+# React Sample Coin Trader
 
 ## Isaac Sanchez, 2021
 
@@ -11,6 +11,10 @@ Some dependencies:
 -   `react-icons`
 
 <br>
+
+---
+
+📈 [Coin Trader (Live page)](http://jelitter.github.io/coin-trader)
 
 ---
 
