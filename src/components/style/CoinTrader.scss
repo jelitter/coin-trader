@@ -76,19 +76,21 @@ $red: #ec5e33;
 
     .sales {
         border-top: #ddd 1px solid;
-        padding: 1rem;
+        padding: 0 1rem;
         overflow: hidden;
         font-family: 'Lucida Console', Monaco, monospace;
         color: $red;
+        position: relative;
     }
 
     .purchases {
         background-color: #292d36;
-        padding: 1rem;
+        padding: 0 1rem;
         overflow: hidden;
         font-family: 'Lucida Console', Monaco, monospace;
         color: $green;
         border-top: #ddd 1px solid;
+        position: relative;
     }
 
     .fadeIn {
@@ -96,9 +98,9 @@ $red: #ec5e33;
     }
 
     ul {
-        height: 100%;
+        height: calc(100% - 1rem);
         width: 50%;
-        margin: auto;
+        margin: 1rem auto 0;
         overflow: hidden auto;
 
         li {
@@ -196,7 +198,6 @@ $red: #ec5e33;
         }
 
         ul {
-            margin: 0 auto;
             width: 90%;
 
             li {

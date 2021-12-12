@@ -140,7 +140,9 @@ const Orders = ({
                 <OrderList orders={orders.filter((order: Order) => order.type === OrderType.Sell)} name='Sales' />
             </div>
             <div className='purchases'>
-                <div title='Break Even Price' style={{ position: 'absolute', color: '#eee', textShadow: 'rgb(0 0 0) 2px 2px 1px' }}>
+                <div
+                    title='Break Even Price'
+                    style={{ position: 'absolute', top: '1rem', color: '#eee', textShadow: 'rgb(0 0 0) 2px 2px 1px' }}>
                     <div>B.E.P.</div>
                     <div style={{ fontSize: '1.25rem' }}>{bep ? `$${bep.toFixed(2)}` : <>&mdash;</>}</div>
                     {bep && (
