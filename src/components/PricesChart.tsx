@@ -25,7 +25,7 @@ export default function PricesChart({ prices, bep }: { prices: CoinPrice[]; bep:
         .sort((a, b) => a - b);
 
     return (
-        <div style={{ backgroundColor: '#292d36' }}>
+        <div className='chart-container'>
             <ResponsiveContainer width='100%' height='100%'>
                 <LineChart
                     width={500}
@@ -33,8 +33,8 @@ export default function PricesChart({ prices, bep }: { prices: CoinPrice[]; bep:
                     data={prices}
                     margin={{
                         top: 20,
-                        right: 30,
-                        left: 10,
+                        right: 5,
+                        left: 0,
                         bottom: 10,
                     }}>
                     <CartesianGrid strokeDasharray='3 3' />
@@ -52,11 +52,43 @@ export default function PricesChart({ prices, bep }: { prices: CoinPrice[]; bep:
                     <Legend />
                     {prices?.length > 0 && (
                         <>
-                            <ReferenceLine y={maxPrice?.price} stroke='red' label='Max' />
-                            <ReferenceLine y={minPrice?.price} stroke='blue' label='Min' />
+                            <ReferenceLine
+                                y={maxPrice?.price}
+                                stroke='#ec5e33'
+                                strokeWidth={2}
+                                label={{
+                                    position: 'top',
+                                    value: 'Max',
+                                    fill: '#ef967b',
+                                    fontSize: '0.75rem',
+                                }}
+                            />
+                            <ReferenceLine
+                                y={minPrice?.price}
+                                stroke='#2A58FB'
+                                strokeWidth={2}
+                                label={{
+                                    position: 'bottom',
+                                    value: 'Min',
+                                    fill: '#8197e5',
+                                    fontSize: '0.75rem',
+                                }}
+                            />
                         </>
                     )}
-                    {bep > 0 && <ReferenceLine y={bep} stroke='green' label='B.E.P.' />}
+                    {bep > 0 && (
+                        <ReferenceLine
+                            y={bep}
+                            stroke='#43a334'
+                            strokeWidth={2}
+                            label={{
+                                position: 'top',
+                                value: 'BEP',
+                                fill: '#63a958',
+                                fontSize: '0.9rem',
+                            }}
+                        />
+                    )}
                     <Line dataKey='price' dot={false} isAnimationActive={false} stroke='#8884d8' strokeWidth={2} unit={'$'} />
                 </LineChart>
             </ResponsiveContainer>

@@ -107,7 +107,7 @@ const Orders = ({
             </div>
             <div className='header'>
                 <div className='title'>
-                    <BsCashCoin style={{ height: '2rem', color: 'cornflowerblue', verticalAlign: 'middle' }} />
+                    <BsCashCoin style={{ height: '2rem', color: '#2A58FB', verticalAlign: 'middle' }} />
                     <div>
                         <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>Wallet</div>
                         <CountUp
