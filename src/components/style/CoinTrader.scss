@@ -50,6 +50,11 @@ $red: #ec5e33;
         justify-content: space-between;
         grid-template-columns: repeat(3, 1fr);
 
+        svg {
+            height: 3rem;
+            width: 2rem;
+        }
+
         .title {
             display: flex;
             gap: 0.5rem;
@@ -59,11 +64,13 @@ $red: #ec5e33;
             display: flex;
             gap: 0.5rem;
             align-items: center;
+            justify-content: center;
         }
         .cash {
             display: flex;
             gap: 0.5rem;
             align-items: center;
+            justify-content: flex-end;
         }
     }
 
@@ -81,6 +88,10 @@ $red: #ec5e33;
         font-family: 'Lucida Console', Monaco, monospace;
         color: $red;
         position: relative;
+
+        .vignette {
+            background: linear-gradient(to bottom, #2f343e, transparent 1rem, transparent calc(100% - 1rem), #2f343e);
+        }
     }
 
     .purchases {
@@ -91,6 +102,10 @@ $red: #ec5e33;
         color: $green;
         border-top: #ddd 1px solid;
         position: relative;
+
+        .vignette {
+            background: linear-gradient(to bottom, #292d36, transparent 1rem, transparent calc(100% - 1rem), #292d36);
+        }
     }
 
     .fadeIn {
@@ -180,6 +195,8 @@ $red: #ec5e33;
         }
 
         .logo {
+            gap: 0;
+
             svg {
                 height: 5rem !important;
                 width: 40% !important;
@@ -190,6 +207,10 @@ $red: #ec5e33;
         .header {
             padding: 0 1rem;
             font-size: 0.8rem;
+
+            svg {
+                width: 1rem;
+            }
         }
 
         .actions {
