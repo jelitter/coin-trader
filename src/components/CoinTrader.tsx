@@ -99,7 +99,7 @@ export const CoinTrader = ({ orders, initialPrices, setOrders, wallet, setWallet
                 <div className='title'>
                     <BsCashCoin style={{ height: '2rem', color: '#2A58FB', verticalAlign: 'middle' }} />
                     <div>
-                        <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>Wallet</div>
+                        <div className='subtitle'>Wallet</div>
                         <CountUp
                             decimals={2}
                             duration={countUpDuration}
@@ -113,7 +113,7 @@ export const CoinTrader = ({ orders, initialPrices, setOrders, wallet, setWallet
                 <div className='coins' title='Coins'>
                     <BiCoin style={{ height: '2rem', color: 'gold', verticalAlign: 'middle' }} />
                     <div>
-                        <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>{wallet.coins} coins</div>
+                        <div className='subtitle'>{wallet.coins} coins</div>
                         <CountUp
                             decimals={2}
                             duration={countUpDuration}
@@ -128,7 +128,7 @@ export const CoinTrader = ({ orders, initialPrices, setOrders, wallet, setWallet
                 <div className='cash' title='Cash'>
                     <BsCashStack style={{ height: '2rem', color: '#43a334', verticalAlign: 'middle' }} />
                     <div>
-                        <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>Cash</div>
+                        <div className='subtitle'>Cash</div>
                         <CountUp
                             decimals={2}
                             duration={countUpDuration}
