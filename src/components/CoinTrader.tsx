@@ -12,7 +12,7 @@ import { OrderList } from './OrderList';
 import PricesChart from './PricesChart';
 import './style/CoinTrader.scss';
 
-const PRICE_RATE = 1000; // milliseconds
+const PRICE_RATE = 2000; // milliseconds
 const countUpDuration = 0.5; // seconds
 
 const Orders = ({
