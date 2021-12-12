@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.scss';
 import OrderBook from './components/CoinTrader';
 import Footer from './components/Footer';
@@ -12,8 +12,13 @@ const App = () => {
     const [orders, setOrders] = useState<Order[]>([]);
     const [wallet, setWallet] = useState<Wallet>(INITIAL_WALLET);
 
+    const scrollInto = useRef(null);
+    useEffect(() => {
+        scrollInto.current.scrollIntoView();
+    });
+
     return (
-        <div className='App'>
+        <div className='App' ref={scrollInto}>
             <OrderBook orders={orders} initialPrices={initialPrices} setOrders={setOrders} wallet={wallet} setWallet={setWallet} />
             <Footer />
         </div>
