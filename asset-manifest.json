@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/coin-trader/static/css/main.4fb8a27d.chunk.css",
-    "main.js": "/coin-trader/static/js/main.e916afb4.chunk.js",
-    "main.js.map": "/coin-trader/static/js/main.e916afb4.chunk.js.map",
-    "runtime-main.js": "/coin-trader/static/js/runtime-main.2b038c52.js",
-    "runtime-main.js.map": "/coin-trader/static/js/runtime-main.2b038c52.js.map",
-    "static/js/2.26fd6d65.chunk.js": "/coin-trader/static/js/2.26fd6d65.chunk.js",
-    "static/js/2.26fd6d65.chunk.js.map": "/coin-trader/static/js/2.26fd6d65.chunk.js.map",
-    "static/js/3.0444a242.chunk.js": "/coin-trader/static/js/3.0444a242.chunk.js",
-    "static/js/3.0444a242.chunk.js.map": "/coin-trader/static/js/3.0444a242.chunk.js.map",
+    "main.css": "/coin-trader/static/css/main.335ddc47.chunk.css",
+    "main.js": "/coin-trader/static/js/main.963ca543.chunk.js",
+    "main.js.map": "/coin-trader/static/js/main.963ca543.chunk.js.map",
+    "runtime-main.js": "/coin-trader/static/js/runtime-main.fad4b2e2.js",
+    "runtime-main.js.map": "/coin-trader/static/js/runtime-main.fad4b2e2.js.map",
+    "static/js/2.fa71ad7f.chunk.js": "/coin-trader/static/js/2.fa71ad7f.chunk.js",
+    "static/js/2.fa71ad7f.chunk.js.map": "/coin-trader/static/js/2.fa71ad7f.chunk.js.map",
+    "static/js/3.3a36d4e4.chunk.js": "/coin-trader/static/js/3.3a36d4e4.chunk.js",
+    "static/js/3.3a36d4e4.chunk.js.map": "/coin-trader/static/js/3.3a36d4e4.chunk.js.map",
     "index.html": "/coin-trader/index.html",
-    "static/css/main.4fb8a27d.chunk.css.map": "/coin-trader/static/css/main.4fb8a27d.chunk.css.map",
-    "static/js/2.26fd6d65.chunk.js.LICENSE.txt": "/coin-trader/static/js/2.26fd6d65.chunk.js.LICENSE.txt"
+    "static/css/main.335ddc47.chunk.css.map": "/coin-trader/static/css/main.335ddc47.chunk.css.map",
+    "static/js/2.fa71ad7f.chunk.js.LICENSE.txt": "/coin-trader/static/js/2.fa71ad7f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2b038c52.js",
-    "static/js/2.26fd6d65.chunk.js",
-    "static/css/main.4fb8a27d.chunk.css",
-    "static/js/main.e916afb4.chunk.js"
+    "static/js/runtime-main.fad4b2e2.js",
+    "static/js/2.fa71ad7f.chunk.js",
+    "static/css/main.335ddc47.chunk.css",
+    "static/js/main.963ca543.chunk.js"
   ]
 }
