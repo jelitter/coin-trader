@@ -1,29 +1,41 @@
 # React Sample Coin Trader
 
-## Isaac Sanchez, 2021
-
 Project created with `create-react-app`.
 
-Some dependencies:
+To run locally:
 
--   `recharts`
--   `uuid`
--   `react-icons`
+```sh
+yarn install
+yarn start
+```
+
+Or visit 📈 [Coin Trader (Live page)](http://jelitter.github.io/coin-trader)
 
 <br>
 
 ---
 
-📈 [Coin Trader (Live page)](http://jelitter.github.io/coin-trader)
+Some dependencies:
+
+-   `react-countup`
+-   `react-icons`
+-   `recharts`
+-   `uuid`
+
+<br>
 
 ---
 
-## Exercise:
+## 📝 Exercise:
 
 [![Example Order Book](example.gif)](example.gif)
 
-## Implementation:
+## 👉 Implementation:
 
-[![Implementation Order Book](order-book.gif)](order-book.gif)
+[![Implementation Coin Trader](coin-trader.gif)](coin-trader.gif)
 
+<br>
 
+---
+
+### Isaac Sanchez, 2021
