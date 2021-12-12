@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
 import { BiCoin } from 'react-icons/bi';
 import { BsCashCoin, BsCashStack } from 'react-icons/bs';
 import { SiCoinbase } from 'react-icons/si';
@@ -10,6 +11,9 @@ import HeaderDetail from './HeaderDetail';
 import { OrderList } from './OrderList';
 import PricesChart from './PricesChart';
 import './style/CoinTrader.scss';
+
+const PRICE_RATE = 1000; // milliseconds
+const countUpDuration = 0.5; // seconds
 
 const Orders = ({
     orders,
@@ -43,7 +47,7 @@ const Orders = ({
             }
             setPrices([...prices, { id: uuidv4(), timeStamp: new Date().toISOString().substring(11, 19), price }]);
             setPL(wallet.coins * price - wallet.coins * bep);
-        }, 500);
+        }, PRICE_RATE);
         return () => clearInterval(timer);
     }, [bep, currentPrice, prices, pricesJson, wallet.coins]);
 
@@ -106,14 +110,28 @@ const Orders = ({
                     <BsCashCoin style={{ height: '2rem', color: 'cornflowerblue', verticalAlign: 'middle' }} />
                     <div>
                         <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>Wallet</div>
-                        <div>$ {(wallet.coins * currentPrice + wallet.cash).toFixed(2)}</div>
+                        <CountUp
+                            decimals={2}
+                            duration={countUpDuration}
+                            end={wallet.coins * currentPrice + wallet.cash}
+                            prefix='$'
+                            preserveValue={true}
+                            useEasing={true}
+                        />
                     </div>
                 </div>
                 <div className='coins' title='Coins'>
                     <BiCoin style={{ height: '2rem', color: 'gold', verticalAlign: 'middle' }} />
                     <div>
                         <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>{wallet.coins} coins</div>
-                        <div>$ {(wallet.coins * currentPrice).toFixed(2)}</div>
+                        <CountUp
+                            decimals={2}
+                            duration={countUpDuration}
+                            end={wallet.coins * currentPrice}
+                            prefix='$'
+                            preserveValue={true}
+                            useEasing={true}
+                        />
                     </div>
                 </div>
 
@@ -121,7 +139,14 @@ const Orders = ({
                     <BsCashStack style={{ height: '2rem', color: '#43a334', verticalAlign: 'middle' }} />
                     <div>
                         <div style={{ fontSize: '0.75rem', textAlign: 'left', opacity: '0.75' }}>Cash</div>
-                        <div>$ {wallet.cash.toFixed(2)}</div>
+                        <CountUp
+                            decimals={2}
+                            duration={countUpDuration}
+                            end={wallet.cash}
+                            prefix='$'
+                            preserveValue={true}
+                            useEasing={true}
+                        />
                     </div>
                 </div>
             </div>
@@ -144,10 +169,29 @@ const Orders = ({
                     title='Break Even Price'
                     style={{ position: 'absolute', top: '1rem', color: '#eee', textShadow: 'rgb(0 0 0) 2px 2px 1px' }}>
                     <div>B.E.P.</div>
-                    <div style={{ fontSize: '1.25rem' }}>{bep ? `$${bep.toFixed(2)}` : <>&mdash;</>}</div>
+                    {/* <div style={{ fontSize: '1.25rem' }}>{bep ? `$${bep.toFixed(2)}` : <>&mdash;</>}</div> */}
+                    <div style={{ fontSize: '1.25rem' }}>
+                        {bep ? (
+                            <CountUp preserveValue={true} end={bep} decimals={2} duration={countUpDuration} useEasing={true} prefix='$' />
+                        ) : (
+                            <>&mdash;</>
+                        )}
+                    </div>
+
                     {bep && (
                         <div style={{ fontSize: '0.8rem', color: currentPrice - bep >= 0 ? '#43a334' : '#ec5e33' }}>
-                            {bep > 0 ? (currentPrice - bep).toFixed(2) : (0).toFixed(2)}
+                            {bep > 0 ? (
+                                <CountUp
+                                    decimals={2}
+                                    duration={countUpDuration}
+                                    end={currentPrice - bep}
+                                    prefix='$'
+                                    preserveValue={true}
+                                    useEasing={true}
+                                />
+                            ) : (
+                                (0).toFixed(2)
+                            )}
                         </div>
                     )}
                 </div>

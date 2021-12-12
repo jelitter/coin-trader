@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 
 export default function HeaderDetail({ currentPrice, PL, realizedPL }: { currentPrice: number; PL: number; realizedPL: number }) {
     return (
@@ -15,7 +16,7 @@ export default function HeaderDetail({ currentPrice, PL, realizedPL }: { current
                                 textAlign: 'right',
                                 width: '40%',
                             }}>
-                            ${currentPrice.toFixed(2)}
+                            <CountUp preserveValue={true} end={currentPrice} decimals={2} duration={0.5} useEasing={true} prefix='$' />
                         </td>
                     </tr>
                     <tr>
@@ -26,7 +27,7 @@ export default function HeaderDetail({ currentPrice, PL, realizedPL }: { current
                                 fontFamily: '"Lucida Console", Monaco, monospace',
                                 textAlign: 'right',
                             }}>
-                            ${PL.toFixed(2)}
+                            <CountUp preserveValue={true} end={PL} decimals={2} duration={0.5} useEasing={true} prefix='$' />
                         </td>
                     </tr>
                     <tr>
@@ -37,7 +38,7 @@ export default function HeaderDetail({ currentPrice, PL, realizedPL }: { current
                                 fontFamily: '"Lucida Console", Monaco, monospace',
                                 textAlign: 'right',
                             }}>
-                            ${realizedPL.toFixed(2)}
+                            <CountUp preserveValue={true} end={realizedPL} decimals={2} duration={0.5} useEasing={true} prefix='$' />
                         </td>
                     </tr>
                 </tbody>
