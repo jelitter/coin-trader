@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/coin-trader/static/css/main.1b1c37f0.chunk.css",
-    "main.js": "/coin-trader/static/js/main.e1105d66.chunk.js",
-    "main.js.map": "/coin-trader/static/js/main.e1105d66.chunk.js.map",
+    "main.js": "/coin-trader/static/js/main.96ae435e.chunk.js",
+    "main.js.map": "/coin-trader/static/js/main.96ae435e.chunk.js.map",
     "runtime-main.js": "/coin-trader/static/js/runtime-main.2b038c52.js",
     "runtime-main.js.map": "/coin-trader/static/js/runtime-main.2b038c52.js.map",
     "static/js/2.4d8ca238.chunk.js": "/coin-trader/static/js/2.4d8ca238.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2b038c52.js",
     "static/js/2.4d8ca238.chunk.js",
     "static/css/main.1b1c37f0.chunk.css",
-    "static/js/main.e1105d66.chunk.js"
+    "static/js/main.96ae435e.chunk.js"
   ]
 }
