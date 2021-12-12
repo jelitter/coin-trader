@@ -1,11 +1,11 @@
-// import React from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { CoinPrice } from '../models/coin-price';
+import { PriceChartProps } from '../models/prop-types';
 
 let minPrice: CoinPrice = { id: null, timeStamp: '', price: Number.MAX_VALUE };
 let maxPrice: CoinPrice = { id: null, timeStamp: '', price: -Number.MAX_VALUE };
 
-export default function PricesChart({ prices, bep }: { prices: CoinPrice[]; bep: number }) {
+export const PricesChart = ({ prices, bep }: PriceChartProps) => {
     const rollingMaxPrice = prices.find(p => p?.price === prices.reduce((max, p) => (p?.price > max ? p?.price : max), 0));
     const rollingMinPrice = prices.find(p => p?.price === prices.reduce((min, p) => (p?.price < min ? p?.price : min), Number.MAX_VALUE));
 
@@ -94,4 +94,4 @@ export default function PricesChart({ prices, bep }: { prices: CoinPrice[]; bep:
             </ResponsiveContainer>
         </div>
     );
-}
+};

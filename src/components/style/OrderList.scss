@@ -1,8 +1,29 @@
-.vignette {
-    background: linear-gradient(to bottom, #2f343e, transparent 1rem, transparent calc(100% - 2rem), #2f343e);
+.OrderList {
+    display: flex;
     height: 100%;
-    margin-left: -1rem;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
+    justify-content: center;
+
+    .vignette {
+        background: linear-gradient(to bottom, #2f343e, transparent 1rem, transparent calc(100% - 2rem), #2f343e);
+        height: 100%;
+        pointer-events: none;
+        position: absolute !important;
+        width: 100%;
+
+        &.purchases {
+            background: linear-gradient(to bottom, #292d36, transparent 1rem, transparent calc(100% - 2rem), #292d36);
+        }
+    }
+
+    .duration {
+        color: #5d6574;
+    }
+
+    .empty {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        filter: grayscale(0.25);
+    }
 }

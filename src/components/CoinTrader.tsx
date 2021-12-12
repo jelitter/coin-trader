@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import { BiCoin } from 'react-icons/bi';
 import { BsCashCoin, BsCashStack } from 'react-icons/bs';
@@ -6,28 +6,17 @@ import { SiCoinbase } from 'react-icons/si';
 import { v4 as uuidv4 } from 'uuid';
 import { CoinPrice, getNoise, PRICES_LENGTH } from '../models/coin-price';
 import { Order, OrderType } from '../models/order';
-import { Wallet } from '../models/wallet';
-import HeaderDetail from './HeaderDetail';
+import { CoinTraderProps } from '../models/prop-types';
+import { BreakEvenPrice } from './BreakEvenPrice';
+import { HeaderDetail } from './HeaderDetail';
 import { OrderList } from './OrderList';
-import PricesChart from './PricesChart';
+import { PricesChart } from './PricesChart';
 import './style/CoinTrader.scss';
 
 const PRICE_RATE = 2000; // milliseconds
 const countUpDuration = 0.5; // seconds
 
-const Orders = ({
-    orders,
-    initialPrices,
-    setOrders,
-    wallet,
-    setWallet,
-}: {
-    orders: Order[];
-    initialPrices: CoinPrice[];
-    setOrders: React.Dispatch<React.SetStateAction<Order[]>>;
-    wallet: Wallet;
-    setWallet: React.Dispatch<React.SetStateAction<Wallet>>;
-}) => {
+export const CoinTrader = ({ orders, initialPrices, setOrders, wallet, setWallet }: CoinTraderProps) => {
     const [prices, setPrices] = useState<CoinPrice[]>(initialPrices);
     const [currentPrice, setCurrentPrice] = useState<number>(prices[prices.length - 1].price);
     const [bep, setBep] = useState<number>(wallet.coins > 0 ? wallet.coins * currentPrice : null);
@@ -105,6 +94,7 @@ const Orders = ({
                 />
                 <HeaderDetail currentPrice={currentPrice} PL={PL} realizedPL={realizedPL} />
             </div>
+
             <div className='header'>
                 <div className='title'>
                     <BsCashCoin style={{ height: '2rem', color: '#2A58FB', verticalAlign: 'middle' }} />
@@ -150,6 +140,7 @@ const Orders = ({
                     </div>
                 </div>
             </div>
+
             <div className='actions'>
                 <button className='buy' disabled={wallet.cash <= currentPrice} onClick={() => buy()}>
                     Buy
@@ -162,43 +153,13 @@ const Orders = ({
             <PricesChart prices={prices} bep={bep} />
 
             <div className='sales'>
-                <OrderList orders={orders.filter((order: Order) => order.type === OrderType.Sell)} name='Sales' />
+                <OrderList orders={orders.filter((order: Order) => order.type === OrderType.Sell)} name='sales' />
             </div>
-            <div className='purchases'>
-                <div
-                    title='Break Even Price'
-                    style={{ position: 'absolute', top: '1rem', color: '#eee', textShadow: 'rgb(0 0 0) 2px 2px 1px' }}>
-                    <div>B.E.P.</div>
-                    {/* <div style={{ fontSize: '1.25rem' }}>{bep ? `$${bep.toFixed(2)}` : <>&mdash;</>}</div> */}
-                    <div style={{ fontSize: '1.25rem' }}>
-                        {bep ? (
-                            <CountUp preserveValue={true} end={bep} decimals={2} duration={countUpDuration} useEasing={true} prefix='$' />
-                        ) : (
-                            <>&mdash;</>
-                        )}
-                    </div>
 
-                    {bep && (
-                        <div style={{ fontSize: '0.8rem', color: currentPrice - bep >= 0 ? '#43a334' : '#ec5e33' }}>
-                            {bep > 0 ? (
-                                <CountUp
-                                    decimals={2}
-                                    duration={countUpDuration}
-                                    end={currentPrice - bep}
-                                    prefix='$'
-                                    preserveValue={true}
-                                    useEasing={true}
-                                />
-                            ) : (
-                                (0).toFixed(2)
-                            )}
-                        </div>
-                    )}
-                </div>
-                <OrderList orders={orders.filter((order: Order) => order.type === OrderType.Buy)} name='Purchases' />
+            <div className='purchases'>
+                <BreakEvenPrice bep={bep} currentPrice={currentPrice} countUpDuration={countUpDuration} />
+                <OrderList orders={orders.filter((order: Order) => order.type === OrderType.Buy)} name='purchases' />
             </div>
         </div>
     );
 };
-
-export default Orders;

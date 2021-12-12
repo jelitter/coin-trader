@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.scss';
-import OrderBook from './components/CoinTrader';
-import Footer from './components/Footer';
+import { CoinTrader } from './components/CoinTrader';
+import { Footer } from './components/Footer';
 import { getCoinPrices, PRICES_LENGTH } from './models/coin-price';
 import { Order } from './models/order';
 import { INITIAL_WALLET, Wallet } from './models/wallet';
@@ -19,7 +19,7 @@ const App = () => {
 
     return (
         <div className='App' ref={scrollInto}>
-            <OrderBook orders={orders} initialPrices={initialPrices} setOrders={setOrders} wallet={wallet} setWallet={setWallet} />
+            <CoinTrader orders={orders} initialPrices={initialPrices} setOrders={setOrders} wallet={wallet} setWallet={setWallet} />
             <Footer />
         </div>
     );

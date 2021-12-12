@@ -1,0 +1,33 @@
+.HeaderDetail {
+    width: 300px;
+
+    table {
+        box-sizing: border-box;
+        font-size: 0.8rem;
+        text-align: left;
+        width: 100%;
+
+        td {
+            background-color: #2f343e;
+            padding: 2px 0.5rem;
+
+            &.current {
+                color: gold;
+                font-family: 'Lucida Console', Monaco, monospace;
+                font-weight: 500;
+                text-align: right;
+                width: '40%';
+            }
+
+            &.pl {
+                font-family: 'Lucida Console', Monaco, monospace;
+                text-align: right;
+            }
+
+            &.realized {
+                font-family: 'Lucida Console', Monaco, monospace;
+                text-align: right;
+            }
+        }
+    }
+}
