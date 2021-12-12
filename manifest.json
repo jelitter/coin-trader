@@ -1,6 +1,6 @@
 {
-    "short_name": "Coinbase Order Book",
-    "name": "Coinbase Order Book - Sample",
+    "short_name": "Coinbase Coin Trader",
+    "name": "Coinbase Coin Trader - Sample",
     "icons": [
         {
             "src": "favicon.ico",
