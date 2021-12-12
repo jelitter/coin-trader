@@ -1,5 +1,3 @@
-body,
-html,
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +12,7 @@ html,
     background: #22282e;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     .react-icons {
         vertical-align: middle;

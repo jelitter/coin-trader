@@ -9,10 +9,10 @@ $red: #ec5e33;
     box-sizing: border-box;
     color: #fff;
     display: grid;
-    grid-template-rows: 5rem 4rem 4rem 300px 1fr 1fr ;
+    grid-template-rows: 5rem 4rem 4rem 300px 1fr 1fr;
     height: calc(100vh - 140px);
     overflow: hidden;
-    text-align: center; 
+    text-align: center;
     width: 600px;
     z-index: 1;
 
@@ -75,17 +75,17 @@ $red: #ec5e33;
     }
 
     .sales {
-        background-color: #292d36;
         border-top: #ddd 1px solid;
         padding: 1rem;
-        overflow: hidden auto;
+        overflow: hidden;
         font-family: 'Lucida Console', Monaco, monospace;
         color: $red;
     }
 
     .purchases {
+        background-color: #292d36;
         padding: 1rem;
-        overflow: hidden auto;
+        overflow: hidden;
         font-family: 'Lucida Console', Monaco, monospace;
         color: $green;
         border-top: #ddd 1px solid;
@@ -96,8 +96,10 @@ $red: #ec5e33;
     }
 
     ul {
+        height: 100%;
         width: 50%;
         margin: auto;
+        overflow: hidden auto;
 
         li {
             list-style: none;
@@ -147,5 +149,63 @@ $red: #ec5e33;
     }
     to {
         opacity: 1;
+    }
+}
+
+// Mobile
+
+@media screen and (max-width: 600px) {
+    .orders {
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 5rem 2.5rem 2rem 200px 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'logo'
+            'header'
+            'actions'
+            'sales'
+            'purchases'
+            'sales'
+            'purchases';
+        border: none;
+        border-radius: 0;
+
+        .logo,
+        .purchases,
+        .sales {
+            border: none;
+        }
+
+        .logo {
+            svg {
+                height: 5rem !important;
+                width: 40% !important;
+                margin-left: 0px !important;
+            }
+        }
+
+        .header {
+            padding: 0 1rem;
+            font-size: 0.8rem;
+        }
+
+        .actions {
+            border: none;
+            z-index: 1;
+        }
+
+        ul {
+            margin: 0 auto;
+            width: 90%;
+
+            li {
+                font-size: 0.8rem;
+            }
+        }
+
+        button {
+            height: 2rem;
+        }
     }
 }
